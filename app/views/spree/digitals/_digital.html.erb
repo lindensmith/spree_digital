@@ -1,5 +1,10 @@
 <% if digital.attachment_file_name.present? %>
+<<<<<<< HEAD
   <%= File.extname(digital.attachment_file_name) %> (<%= number_to_human_size(digital.attachment_file_size) %>)<br/>
+=======
+  <% File.extname(digital.attachment_file_name)=~ /\.(\w*)$/%>
+  <%= t("digital_format.#{$1.downcase}") %> (<%= number_to_human_size(digital.attachment_file_size) %>)<br/>
+>>>>>>> extended_download
 <% else %>
   <%=t 'broken_file' %>
 <% end %>
