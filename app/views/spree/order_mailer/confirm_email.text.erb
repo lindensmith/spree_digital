@@ -30,7 +30,7 @@ the file by logging into your account and selecting the order.
 <% for link in item.digital_links %>
 <% format = File.extname(link.digital.attachment.path).downcase %>
 <%= t(:digital_download, :type => t("digital_format.#{format}"))%>
-<%= digital_url :host => Spree::Config.get(:site_url), :secret => link.secret %>
+<%= digital_url :host => Spree::Config.get(:site_url), :secret => link.secret, :protocol=>'https'%>
 <% end %>
 <% end %>
 <% end %>
